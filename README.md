@@ -1,6 +1,8 @@
 # TelegoraMall
 Telegora Mall website, using PHP and database 
 
+Test Version. dosen organised files
+
 Functional requirements
 
 Your database must be named telegora_mall.

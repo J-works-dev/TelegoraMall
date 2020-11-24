@@ -83,12 +83,14 @@
                                     <input type="password" class="form-control" id="password" name="password">
                                 </div>
                                 <button type="submit" name = "submit" class="btn btn-default">Log In</button>
+                                <button formaction="join.php" class="btn btn-default">Join In</button>
                             </form>
+                            
                             <?php
                         }
                         else {
                             $error_msg = "";
-
+                            $password = $_POST['password'];
                             // Employee loged in
                             if(!empty($_POST['user_id']))
                             {
@@ -120,10 +122,23 @@
                             }
                             else
                             {
-                                if($user_id == "Jeremy" && $user_pw == "1234") {
+                                require("connect.php");
+                                $sql = "SELECT password
+                                        FROM employee
+                                        WHERE first_name = '$user_id'";
+                                $result = $conn->query($sql);
+                                while($row = $result->fetch_assoc()) {
+                                    $check_password = $row['password'];
+                                }
+                                echo "<script>console.log($check_password);</script>";
+                                if(password_verify($_POST['password'], $check_password)) {
                                     setcookie('userid', $user_id, time()+60*60, '/');
                                     echo "Welcome, $user_id. You are loged in.";
                                     header("refresh:2; url=index.php");
+                                } else if ($user_id == "Jeremy" && $user_pw == "1234") {
+                                    setcookie('userid', $user_id, time()+60*60, '/');
+                                    echo "Welcome, $user_id. You are loged in.";
+                                    // header("refresh:2; url=index.php");
                                 }
                                 else {
                                     echo "Please check your ID and Password.";

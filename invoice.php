@@ -15,6 +15,7 @@
 
     require("connect.php");
     $id = $_REQUEST['id'];
+    // same as this. working perfectly same. $id = $_GET['id'];
     $sql = "SELECT il.invoice_no, il.prod_id, il.qty AS 'quantity', i.date AS 'date', 
             c.first_name AS 'cust_fname', c.last_name AS 'cust_lname', 
             e.first_name AS 'emp_fname', e.last_name AS 'emp_lname',

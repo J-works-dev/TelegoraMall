@@ -58,9 +58,9 @@
                 <nav class="sidebar-nav">
                     <ul class="nav nav-pills nav-stacked">
                         <li><a href="#top">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#where">Where are we?</a></li>
-                        <li><a href="#contact">Contact details</a></li>
+                        <li><a href="login.php">Log in</a></li>
+                        <li><a href="join.php">Join in</a></li>
+                        <!-- <li><a href="#contact">Contact details</a></li> -->
                     </ul>
                 </nav>
             </div>
@@ -76,8 +76,8 @@
                     <p>We are located in South Perth</p>
                     
                     <h2 id="contact">Contact us</h2>
-                    <p>email us</p>
-                    <p>phone us</p>
+                    <p>email 30024165@tafe.wa.edu.au</p>
+                    <p>phone 1800 001 001 </p>
                 </article>
             </main>
         </section>
